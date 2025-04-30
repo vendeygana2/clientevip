@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Potencia tus Recargas!</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #formulario-fondo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        #ventana-emergente {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
+            z-index: 2;
+            text-align: center;
+            color: white;
+            width: 85%;
+            max-width: 500px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -40%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+
+        #cerrar-ventana {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+            background: rgba(0,0,0,0.4);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        #cerrar-ventana:hover {
+            background: rgba(255,0,0,0.7);
+        }
+
+        h2 {
+            margin-top: 10px;
+            font-size: 26px;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.5;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .emoji {
+            font-size: 22px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <iframe id="formulario-fondo" src="https://online.forms.app/respuestasdereportesdefa/clientesvip" frameborder="0"></iframe>
+
+    <div id="ventana-emergente">
+        <a href="#" id="cerrar-ventana" onclick="cerrarVentana()">×</a>
+        <h2>¡Potencia tus Recargas! <span class="emoji">🚀</span></h2>
+        <p>Ofrece un <strong>VALOR AGREGADO</strong> irresistible: ¡Películas y Series <strong>GRATIS</strong> al recargar! <span class="emoji">🎬🍿</span></p>
+        <p>Cobra comisión y fideliza a tus clientes con este increíble PLUS. <span class="emoji">💰</span></p>
+    </div>
+
+    <script>
+        function cerrarVentana() {
+            document.getElementById('ventana-emergente').style.display = 'none';
+        }
+
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('ventana-emergente').style.display = 'block';
+            }, 800);
+        });
+    </script>
+
+</body>
+</html>
